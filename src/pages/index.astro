@@ -1,0 +1,76 @@
+---
+// Root path — returns 200 with canonical pointing to /zh/ (CRITICAL: no redirect)
+// Per BUILD_GUIDE.md Section V
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+
+const pageTitle = 'AI 量化交易中文社区 (2026) — MT4/MT5 EA与策略分享 | FX278';
+const pageDescription = '面向中文用户的 AI 量化交易社区。探索顶级的 MT4/MT5 EA，开源量化策略，以及算法交易教程。';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="https://fx278.com/zh/"
+  schema={{
+    type: 'WebSite',
+    data: { description: pageDescription },
+  }}
+>
+  <Hero
+    title="顶尖 AI 量化交易与 EA 社区"
+    subtitle="为您提供经过实盘验证的 MT4/MT5 EA、最新的机器学习量化策略以及详尽的新手入门指南。"
+    cta={{ label: '查看 EA 测评', href: '/zh/categories/ea/' }}
+    ctaSecondary={{ label: '量化策略分享', href: '/zh/categories/策略/' }}
+  />
+
+  <section class="container py-16">
+    <h2 class="text-2xl font-bold mb-8 text-center">核心资源</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <Card
+        title="MT4/MT5 EA 测评"
+        description="深度评测 MQL5 市场主流 Expert Advisors 的回测与实盘表现"
+        href="/zh/categories/ea/"
+      />
+      <Card
+        title="AI 量化策略"
+        description="开源 Python 量化模型，机器学习在交易中的实际应用"
+        href="/zh/categories/策略/"
+      />
+      <Card
+        title="交易教程"
+        description="从零开始：VPS 搭建、MQL5 编程以及深度学习模型训练"
+        href="/zh/categories/教程/"
+      />
+      <Card
+        title="中文论坛"
+        description="与其他量化交易者交流算法逻辑与实盘经验"
+        href="/zh/community/"
+      />
+    </div>
+  </section>
+
+  <section class="bg-neutral py-16">
+    <div class="container">
+      <h2 class="text-2xl font-bold mb-8 text-center">最新文章与测评</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Card
+          title="AI 量化交易从零开始 (2026)"
+          description="普通交易者如何利用 AI 和自动化工具建立自己的量化交易体系。"
+          href="/zh/blog/ai-量化入门/"
+        />
+        <Card
+          title="Waka Waka EA 深度解析"
+          description="揭秘连续多年盈利的马丁格尔变种策略的风险与收益特征。"
+          href="/zh/reviews/waka-waka-ea/"
+        />
+        <Card
+          title="Python 接入 MT5 终极指南"
+          description="如何使用 Python 和 MetaTrader 5 API 实现毫秒级的自动化下单。"
+          href="/zh/blog/python-mt5-guide/"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

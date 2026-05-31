@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = 'AI 量化交易与 EA 测评中心 | FX278';
+const pageDescription = '大中华区最专业的外汇 EA 测评与量化交易社区。提供真实 MQL5 实盘数据、模型回测报告及前沿 AI 交易策略。';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="https://fx278.com/zh/"
+  schema={{ type: 'WebSite', data: { description: pageDescription } }}
+>
+  <!-- Market Ticker (Eastern Style) -->
+  <div class="bg-[#111111] text-white border-b border-[#333] overflow-hidden whitespace-nowrap py-1.5 flex gap-8 font-mono text-xs items-center px-4">
+    <div class="flex items-center gap-2">
+      <span class="text-muted">EUR/USD</span>
+      <span class="text-[#E11D48]">1.0945 (+0.12%)</span>
+      <svg class="w-3 h-3 text-[#E11D48]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-muted">GBP/JPY</span>
+      <span class="text-[#16A34A]">192.30 (-0.45%)</span>
+      <svg class="w-3 h-3 text-[#16A34A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-muted">XAU/USD</span>
+      <span class="text-[#E11D48]">2345.60 (+1.20%)</span>
+      <svg class="w-3 h-3 text-[#E11D48]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </div>
+    <div class="ml-auto text-muted flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+      实盘数据同步中 (API Active)
+    </div>
+  </div>
+
+  <!-- Institutional Header -->
+  <header class="bg-white border-b border-border py-8 px-6">
+    <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div>
+        <h1 class="text-4xl font-bold tracking-tight mb-2 text-primary">FX278.com 量化终端</h1>
+        <p class="text-muted text-sm">拒绝黑盒 EA，用数据驱动交易。专注于 MetaTrader 实盘穿透与 AI 策略开发。</p>
+      </div>
+      <div class="flex gap-3">
+        <button class="border border-primary text-primary px-4 py-2 text-sm rounded hover:bg-primary/5 transition-colors">开发者接入</button>
+        <button class="bg-[#E11D48] text-white px-6 py-2 text-sm rounded hover:bg-[#BE123C] transition-colors shadow-sm">查看最新榜单</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- High Density Layout -->
+  <main class="max-w-[1400px] mx-auto px-6 py-8">
+    <div class="flex flex-col lg:flex-row gap-6">
+      
+      <!-- Left: Data Grid & Leaderboard -->
+      <div class="lg:w-3/4">
+        <h2 class="text-xl font-bold mb-4 border-l-4 border-[#E11D48] pl-3">全网 EA 实盘净值风云榜</h2>
+        
+        <!-- Institutional Data Grid Mock -->
+        <div class="bg-white border border-border shadow-sm rounded mb-8 overflow-hidden text-sm">
+          <div class="grid grid-cols-12 bg-surface border-b border-border font-bold text-muted text-xs uppercase tracking-wider">
+            <div class="col-span-3 p-3 border-r border-border">策略名称 / 开发者</div>
+            <div class="col-span-2 p-3 border-r border-border text-right">总收益率</div>
+            <div class="col-span-2 p-3 border-r border-border text-right">最大回撤</div>
+            <div class="col-span-2 p-3 border-r border-border text-right">夏普比率</div>
+            <div class="col-span-3 p-3 text-center">状态验证</div>
+          </div>
+          
+          <!-- Row 1 -->
+          <div class="grid grid-cols-12 border-b border-border hover:bg-surface transition-colors cursor-pointer">
+            <div class="col-span-3 p-3 border-r border-border">
+              <div class="font-bold text-primary">Perceptrader AI</div>
+              <div class="text-xs text-muted">MQL5 官方认证</div>
+            </div>
+            <div class="col-span-2 p-3 border-r border-border text-right font-mono text-[#E11D48] font-bold flex flex-col justify-center">
+              +245.8%
+            </div>
+            <div class="col-span-2 p-3 border-r border-border text-right font-mono text-[#16A34A] flex flex-col justify-center">
+              -12.4%
+            </div>
+            <div class="col-span-2 p-3 border-r border-border text-right font-mono flex flex-col justify-center">
+              1.85
+            </div>
+            <div class="col-span-3 p-3 flex items-center justify-center gap-2">
+              <span class="bg-green-100 text-green-800 border border-green-200 text-xs px-2 py-0.5 rounded">MyFxBook Verified</span>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="grid grid-cols-12 border-b border-border hover:bg-surface transition-colors cursor-pointer">
+            <div class="col-span-3 p-3 border-r border-border">
+              <div class="font-bold text-primary">Waka Waka EA</div>
+              <div class="text-xs text-muted">Valeriia Mishchenko</div>
+            </div>
+            <div class="col-span-2 p-3 border-r border-border text-right font-mono text-[#E11D48] font-bold flex flex-col justify-center">
+              +6,700%
+            </div>
+            <div class="col-span-2 p-3 border-r border-border text-right font-mono text-[#16A34A] flex flex-col justify-center">
+              -26.7%
+            </div>
+            <div class="col-span-2 p-3 border-r border-border text-right font-mono flex flex-col justify-center">
+              1.42
+            </div>
+            <div class="col-span-3 p-3 flex items-center justify-center gap-2">
+              <span class="bg-green-100 text-green-800 border border-green-200 text-xs px-2 py-0.5 rounded">6年实盘</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: News & Insights -->
+      <div class="lg:w-1/4 flex flex-col gap-6">
+        <div class="bg-white border border-border shadow-sm rounded p-5">
+          <h3 class="font-bold text-lg mb-4 border-b border-border pb-2">量化快讯 (7x24)</h3>
+          <ul class="space-y-4 text-sm">
+            <li class="flex gap-3 cursor-pointer group">
+              <span class="text-[#E11D48] font-bold">14:20</span>
+              <p class="group-hover:text-primary transition-colors text-muted">OpenAI 发布新一代 o1 模型，代码编写能力大幅提升，社区正尝试用于 MQL5 自动生成。</p>
+            </li>
+            <li class="flex gap-3 cursor-pointer group">
+              <span class="text-[#E11D48] font-bold">11:05</span>
+              <p class="group-hover:text-primary transition-colors text-muted">Prop Firm 封控升级，多家知名自营机构宣布禁止高频交易 (HFT) EA 入场。</p>
+            </li>
+            <li class="flex gap-3 cursor-pointer group">
+              <span class="text-muted font-bold">09:15</span>
+              <p class="group-hover:text-primary transition-colors text-muted">EUR/USD 突破 1.09 阻力位，动量突破策略近期胜率上升。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</BaseLayout>

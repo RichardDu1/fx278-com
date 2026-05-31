@@ -58,5 +58,305 @@
     "role": "risk-manager",
     "intent": "set-leverage-limits",
     "status": "completed"
+  },
+  {
+    "topic": "Automating Trader Application Screening with AI-Based Risk Scoring",
+    "role": "proprietary-trading-firm-compliance-officer",
+    "intent": "automate-trader-application-screening",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Powered Real-Time Trade Surveillance for Rule Violations",
+    "role": "proprietary-trading-firm-risk-manager",
+    "intent": "detect-rule-violations",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Payout Calculation and Disbursement Using Smart Contracts",
+    "role": "proprietary-trading-firm-finance-manager",
+    "intent": "automate-payouts",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Driven Evaluation of Trading Strategies Using Historical Backtest Data",
+    "role": "proprietary-trading-firm-strategy-analyst",
+    "intent": "evaluate-trading-strategies",
+    "status": "pending"
+  },
+  {
+    "topic": "Intelligent Chatbot for Trader Onboarding and Compliance Queries",
+    "role": "proprietary-trading-firm-support-manager",
+    "intent": "automate-onboarding-support",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Generation of Daily Performance Reports for Traders",
+    "role": "proprietary-trading-firm-operations-manager",
+    "intent": "generate-performance-reports",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Based Detection of Suspicious Trading Patterns Indicating Collusion",
+    "role": "proprietary-trading-firm-risk-manager",
+    "intent": "detect-collusion",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Matching of Traders to Suitable Funding Programs Using ML",
+    "role": "proprietary-trading-firm-recruiter",
+    "intent": "match-traders-to-programs",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Enhanced News Sentiment Analysis for Trading Rule Adjustments",
+    "role": "proprietary-trading-firm-risk-manager",
+    "intent": "adjust-rules-based-on-sentiment",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Compliance Checks for Traders' Social Media Posts",
+    "role": "proprietary-trading-firm-compliance-officer",
+    "intent": "monitor-social-media-compliance",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Powered Dynamic Leverage Adjustment Based on Trader Performance",
+    "role": "proprietary-trading-firm-risk-manager",
+    "intent": "adjust-leverage-dynamically",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Creation of Personalized Trader Dashboards Using AI",
+    "role": "proprietary-trading-firm-product-manager",
+    "intent": "create-personalized-dashboards",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Driven Analysis of Drawdowns to Predict Trader Failure Risk",
+    "role": "proprietary-trading-firm-risk-manager",
+    "intent": "predict-trader-failure",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Flagging of Trades Near Key Technical Levels Using Computer Vision",
+    "role": "proprietary-trading-firm-trader-supervisor",
+    "intent": "flag-trades-near-levels",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Based Optimization of Trader Profit Split Models Using Reinforcement Learning",
+    "role": "proprietary-trading-firm-compensation-analyst",
+    "intent": "optimize-profit-splits",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Translation and Summarization of Regulatory Updates for Global Firms",
+    "role": "proprietary-trading-firm-compliance-officer",
+    "intent": "translate-regulatory-updates",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Powered Identification of Scalping and High-Frequency Trading Abuse",
+    "role": "proprietary-trading-firm-risk-manager",
+    "intent": "identify-scalping-abuse",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Onboarding Document Verification Using OCR and ID Validation",
+    "role": "proprietary-trading-firm-compliance-officer",
+    "intent": "verify-onboarding-documents",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Driven Prediction of Trader Attrition Based on Behavioral Data",
+    "role": "proprietary-trading-firm-hr-manager",
+    "intent": "predict-trader-attrition",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Generation of Risk Warnings for Traders Approaching Limits",
+    "role": "proprietary-trading-firm-risk-manager",
+    "intent": "generate-risk-warnings",
+    "status": "pending"
+  },
+  {
+    "topic": "Automating Trader Onboarding with Document Verification and KYC Checks",
+    "role": "compliance-officer",
+    "intent": "streamline-onboarding",
+    "status": "pending"
+  },
+  {
+    "topic": "Real-Time Risk Monitoring Dashboard with AI Alerting for Drawdown Limits",
+    "role": "risk-manager",
+    "intent": "monitor-risk",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Profit Split Calculation and Payout Processing via Smart Contracts",
+    "role": "finance-manager",
+    "intent": "automate-payouts",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Powered Trade Journal Analysis for Trader Performance Review",
+    "role": "trading-coach",
+    "intent": "evaluate-performance",
+    "status": "pending"
+  },
+  {
+    "topic": "Dynamic Leverage Adjustment based on Real-Time Volatility and Trader Equity",
+    "role": "system-administrator",
+    "intent": "optimize-leverage",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Compliance Checks for Trading Strategies against Regulatory Rules",
+    "role": "compliance-officer",
+    "intent": "ensure-compliance",
+    "status": "pending"
+  },
+  {
+    "topic": "Chatbot for Trader Support on Platform Features, Rules, and Funding",
+    "role": "customer-support",
+    "intent": "reduce-support-tickets",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Based Trade Replay and Analysis for Educational Feedback",
+    "role": "trading-coach",
+    "intent": "improve-trading-skills",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Detection of Prohibited Trading Patterns (e.g., Hedging, News Trading)",
+    "role": "compliance-officer",
+    "intent": "detect-violations",
+    "status": "pending"
+  },
+  {
+    "topic": "Personalized Funding Allocation Recommendations using ML on Trader History",
+    "role": "funding-manager",
+    "intent": "optimize-capital",
+    "status": "pending"
+  },
+  {
+    "topic": "Real-Time Sentiment Analysis of News Feeds for Prohibited News Trading Detection",
+    "role": "compliance-officer",
+    "intent": "prevent-rule-breaking",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Generation of Trader Scorecards and Performance Reports",
+    "role": "operations-manager",
+    "intent": "reporting",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Driven Challenge Evaluation: Pass/Fail Prediction using Trader Demo Data",
+    "role": "evaluation-manager",
+    "intent": "assess-traders",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Fee and Commission Reconciliation across Multiple Broker Accounts",
+    "role": "accountant",
+    "intent": "reconcile-fees",
+    "status": "pending"
+  },
+  {
+    "topic": "Intelligent Trade Sizing Assistant based on Account Equity and Risk Parameters",
+    "role": "trader",
+    "intent": "manage-risk",
+    "status": "pending"
+  },
+  {
+    "topic": "Natural Language Query Interface for Trade Data Analytics (e.g., 'Show my worst trades last week')",
+    "role": "trader",
+    "intent": "self-analyze",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Suspicious Activity Reporting (SAR) Generation for Regulatory Filings",
+    "role": "compliance-officer",
+    "intent": "file-reports",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Powered Chatbot for Internal Knowledge Base on Trading Rules and Procedures",
+    "role": "employee",
+    "intent": "find-information",
+    "status": "pending"
+  },
+  {
+    "topic": "Predictive Model for Trader Attrition and Intervention Alerts",
+    "role": "retention-manager",
+    "intent": "reduce-churn",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Backup and Disaster Recovery Testing for Trading Infrastructure",
+    "role": "it-manager",
+    "intent": "ensure-uptime",
+    "status": "pending"
+  },
+  {
+    "topic": "Automating Liquidity Sourcing from Multiple Crypto Exchanges Using AI Price Aggregation",
+    "role": "crypto-exchange-cto",
+    "intent": "optimize-liquidity-sourcing",
+    "status": "pending"
+  },
+  {
+    "topic": "Real-Time Fee Optimization for Crypto Withdrawals Using AI to Select Cheapest Network",
+    "role": "crypto-exchange-product-manager",
+    "intent": "minimize-withdrawal-costs",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Driven Compliance Monitoring for Sudden Large Crypto Deposits to Flag AML Risks",
+    "role": "crypto-exchange-compliance-officer",
+    "intent": "detect-aml-red-flags",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Spread Widening Detection Across Trading Pairs Using AI Anomaly Detection",
+    "role": "crypto-exchange-risk-manager",
+    "intent": "monitor-spread-anomalies",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Powered Customer Support Triage for Crypto Deposit Delays Using Historical Data",
+    "role": "crypto-exchange-support-head",
+    "intent": "reduce-deposit-delay-tickets",
+    "status": "pending"
+  },
+  {
+    "topic": "Automating Leverage Limit Adjustments Based on Real-Time Volatility Using AI Models",
+    "role": "crypto-exchange-risk-manager",
+    "intent": "dynamic-leverage-control",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Based Fee Structure Personalization for High-Frequency Traders Using Cluster Analysis",
+    "role": "crypto-exchange-business-developer",
+    "intent": "personalize-trading-fees",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Detection of Wash Trading Patterns Using Graph Neural Networks on Order Book Data",
+    "role": "crypto-exchange-surveillance-analyst",
+    "intent": "detect-wash-trading",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Driven Optimization of Cold Wallet Rebalancing Based on Predictive Outflow Models",
+    "role": "crypto-exchange-custody-manager",
+    "intent": "optimize-cold-wallet-balances",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Regulatory Reporting for Multiple Jurisdictions Using NLP on Transaction Data",
+    "role": "crypto-exchange-compliance-officer",
+    "intent": "streamline-regulatory-filings",
+    "status": "pending"
   }
 ]

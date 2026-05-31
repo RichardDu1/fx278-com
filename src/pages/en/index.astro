@@ -1,0 +1,96 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const allSignals = await getCollection('signals');
+// Sort by subscribers descending
+const topSignals = allSignals.sort((a, b) => b.data.subscribers - a.data.subscribers).slice(0, 5);
+
+const pageTitle = 'FX278 Signal Engine | MQL5 & Copy Trading Performance';
+const pageDescription = 'Real-time performance analytics, drawdown analysis, and risk assessments for the most popular Forex copy trading signals.';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="https://fx278.com/en/"
+  schema={{ type: 'WebSite', data: { description: pageDescription } }}
+>
+  <!-- Terminal Hero -->
+  <header class="bg-surface text-text py-20 border-b border-border">
+    <div class="container max-w-6xl mx-auto px-6">
+      <div class="flex flex-col items-start gap-4">
+        <div class="text-primary font-mono text-sm tracking-widest uppercase flex items-center gap-2">
+          <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+          FX278 // TERMINAL SYS_READY
+        </div>
+        <h1 class="text-4xl md:text-6xl font-sans font-black tracking-tighter mb-4 text-white">
+          Signal Performance <br/><span class="text-primary">Analyzer.</span>
+        </h1>
+        <p class="text-muted font-mono max-w-2xl text-sm leading-relaxed mb-8">
+          > EXECUTING DRAWDOWN ANALYSIS...<br/>
+          > PARSING MQL5 & ZULUTRADE HISTORY...<br/>
+          > ISOLATING SURVIVORSHIP BIAS...<br/>
+          Select a signal below to view full institutional diligence report.
+        </p>
+        <a href="/en/signals/" class="bg-primary text-surface font-mono font-bold px-6 py-3 uppercase hover:bg-white transition-colors">
+          [ ACCESS_LEADERBOARD ]
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Top Signals Data Table -->
+  <section class="bg-surface text-text py-16">
+    <div class="container max-w-6xl mx-auto px-6">
+      <div class="mb-6 flex justify-between items-end border-b border-border pb-4">
+        <div>
+          <h2 class="text-xl font-mono font-bold text-white uppercase">Active_Signals // Top 5 by Volume</h2>
+        </div>
+        <div class="text-xs font-mono text-muted">LIVE_DATA</div>
+      </div>
+
+      <div class="bg-neutral border border-border font-mono text-sm overflow-x-auto">
+        <div class="grid grid-cols-6 border-b border-border text-muted uppercase p-4 min-w-[800px]">
+          <div class="col-span-2">SYS_ID</div>
+          <div>PLATFORM</div>
+          <div class="text-right">MONTHLY_RET</div>
+          <div class="text-right">MAX_DD</div>
+          <div class="text-right">VOL(SUBS)</div>
+        </div>
+        
+        <div class="divide-y divide-border min-w-[800px]">
+          {topSignals.length > 0 ? topSignals.map(signal => (
+            <a href={`/en/signals/${signal.id.split('/').pop()}`} class="grid grid-cols-6 p-4 items-center hover:bg-[#1a1a1a] transition-colors group">
+              <div class="col-span-2 flex flex-col">
+                <span class="font-bold text-white group-hover:text-primary transition-colors">{signal.data.title}</span>
+                <span class="text-xs text-muted">RISK: <span class={signal.data.riskLevel === 'High' ? 'text-accent' : 'text-primary'}>{signal.data.riskLevel}</span></span>
+              </div>
+              <div class="text-muted">{signal.data.platform}</div>
+              <div class={`text-right font-bold ${signal.data.monthlyReturn.includes('-') ? 'text-accent' : 'text-primary'}`}>
+                {signal.data.monthlyReturn}
+              </div>
+              <div class="text-right text-accent font-bold">
+                {signal.data.maxDrawdown}
+              </div>
+              <div class="text-right text-white">
+                {signal.data.subscribers.toLocaleString()}
+              </div>
+            </a>
+          )) : (
+            <div class="p-8 text-center text-primary animate-pulse">
+              [ AWAITING_DATA_STREAM... ]
+            </div>
+          )}
+        </div>
+      </div>
+      
+      <div class="mt-6">
+        <a href="/en/signals/" class="text-primary hover:text-white font-mono text-sm border-b border-primary hover:border-white pb-1 transition-colors">
+          > VIEW_ALL_RECORDS
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

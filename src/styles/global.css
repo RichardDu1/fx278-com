@@ -1,24 +1,23 @@
 @import "tailwindcss";
 
-/* === TRUE BESPOKE REDESIGN: FX278 ===
-   Aesthetic: Eastern Wealth / Institutional Portal
-   Vibe: Data-dense, Bloomberg-style, Red=Up, Green=Down (Asian Standard) === */
+/* === TRUE BESPOKE REDESIGN: FX278 SIGNAL ENGINE ===
+   Aesthetic: Bloomberg Terminal / High-Frequency Trading
+   Vibe: Pure Black, Neon Green (Profit), Crimson (Loss) === */
 
 @theme {
-  --color-primary: #1E3A5F; /* Institutional Navy */
-  --color-primary-dark: #112240;
-  --color-up: #E11D48; /* Crimson / Red for UP in Asia */
-  --color-down: #16A34A; /* Green for DOWN in Asia */
+  --color-primary: #00FF41; /* Hacker/Terminal Green */
+  --color-primary-dark: #008F11;
+  --color-accent: #FF003C;  /* Flash Crash Red */
   
-  --color-surface: #F8F9FA; 
-  --color-neutral: #FFFFFF;
-  --color-border: #DEE2E6;
-  --color-muted: #6C757D;
-  --color-text: #212529;
+  --color-surface: #0a0a0a; /* True Black */
+  --color-neutral: #111111; /* Off-Black */
+  --color-border: #333333;  /* Dark Gray */
+  --color-muted: #888888;   /* Light Gray */
+  --color-text: #E0E0E0;    /* Soft White for reading */
 
-  /* CJK Optimized Typography */
-  --font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', Consolas, monospace;
+  /* Monospace for data, sleek sans for UI */
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

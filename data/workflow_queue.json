@@ -1,0 +1,62 @@
+[
+  {
+    "topic": "Automating Spread Anomaly Detection Across Liquidity Providers Using AI Models",
+    "role": "ecn-broker-analyst",
+    "intent": "detect-spread-anomalies",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Commission Reconciliation for High-Frequency ECN Traders Using NLP and Rule Engines",
+    "role": "compliance-officer",
+    "intent": "reconcile-commissions",
+    "status": "completed"
+  },
+  {
+    "topic": "Predictive Early Warning System for Margin Call Triggers Using Client Trading Pattern Analysis",
+    "role": "risk-manager",
+    "intent": "predict-margin-calls",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Classification and Routing of Deposit/Withdrawal Inquiries Using Intent Recognition",
+    "role": "customer-support-agent",
+    "intent": "classify-payment-inquiries",
+    "status": "completed"
+  },
+  {
+    "topic": "Real-Time Regulatory License Validation Across Jurisdictions Using Web Scraping and AI Verification",
+    "role": "compliance-officer",
+    "intent": "validate-licenses",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Powered Dynamic Commission Fee Adjustment Based on Client Volume and Liquidity Conditions",
+    "role": "pricing-analyst",
+    "intent": "optimize-commission-fees",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Generation of Client-Specific Leverage Reports Using Risk Profile Analysis",
+    "role": "risk-manager",
+    "intent": "generate-leverage-reports",
+    "status": "completed"
+  },
+  {
+    "topic": "NLP-Based Sentiment Analysis for ECN Broker Reviews to Identify Spread and Commission Complaints",
+    "role": "marketing-analyst",
+    "intent": "analyze-broker-reviews",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Compliance Checks for Withdrawal Requests Using Historical Data and Pattern Recognition",
+    "role": "compliance-officer",
+    "intent": "screen-withdrawals",
+    "status": "completed"
+  },
+  {
+    "topic": "Predictive Model for Optimal Leverage Limits Based on Market Volatility and Client Behavior",
+    "role": "risk-manager",
+    "intent": "set-leverage-limits",
+    "status": "completed"
+  }
+]

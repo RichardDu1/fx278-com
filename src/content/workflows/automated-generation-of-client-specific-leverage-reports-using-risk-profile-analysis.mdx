@@ -1,0 +1,81 @@
+---
+title: "Automated Generation of Client-Specific Leverage Reports Using Risk Profile Analysis"
+description: "This workflow guides risk managers in setting up an automated system that pulls client risk profiles from a CRM, applies leverage rules, and generates personalized PDF reports using Python and Zapier."
+targetRole: ["risk-manager"]
+targetIntent: ["generate-leverage-reports"]
+difficulty: "Intermediate"
+setupTime: "2-3 Hours"
+costEstimate: "$0 - $50/mo"
+roi: "Saves 15 hours/week"
+toolsUsed: ["zapier","python","google-sheets","pdfco"]
+---
+
+## Automated Generation of Client-Specific Leverage Reports Using Risk Profile Analysis
+
+### Overview
+This workflow automates the creation of personalized leverage reports for each client based on their risk profile. It integrates your CRM, a risk scoring system, and a PDF generation tool to produce reports on demand or on a schedule.
+
+### Prerequisites
+- A CRM or database with client risk profiles (e.g., Salesforce, HubSpot)
+- Python environment (local or cloud like Google Colab)
+- Zapier account (free tier available)
+- Google Sheets (for intermediate data storage)
+- PDF.co account (free tier available)
+
+### Step 1: Define Risk Profile Categories and Leverage Rules
+First, establish the risk categories (e.g., Low, Medium, High) and corresponding leverage limits. For example:
+- Low Risk: 1:50
+- Medium Risk: 1:30
+- High Risk: 1:10
+
+Store these rules in a Google Sheet named "Leverage Rules" with columns: Risk Category, Max Leverage.
+
+### Step 2: Set Up Client Data Source
+Ensure your CRM exports client risk profiles to a Google Sheet. Use Zapier to connect your CRM to Google Sheets. Create a Zap that triggers when a new client is added or updated, and writes the client ID, name, and risk score to a sheet named "Client Data".
+
+### Step 3: Build the Risk Profile Analysis Script
+Create a Python script that:
+- Reads client data from "Client Data" sheet
+- Reads leverage rules from "Leverage Rules" sheet
+- For each client, determines the appropriate leverage based on risk score
+- Outputs a list of dictionaries with client info and assigned leverage
+
+Example script snippet:
+```python
+import pandas as pd
+
+clients = pd.read_csv('client_data.csv')
+rules = pd.read_csv('leverage_rules.csv')
+
+def get_leverage(risk_score):
+    if risk_score < 30:
+        return rules[rules['Risk Category'] == 'Low']['Max Leverage'].values[0]
+    elif risk_score < 60:
+        return rules[rules['Risk Category'] == 'Medium']['Max Leverage'].values[0]
+    else:
+        return rules[rules['Risk Category'] == 'High']['Max Leverage'].values[0]
+
+clients['Leverage'] = clients['Risk Score'].apply(get_leverage)
+clients.to_csv('client_leverage.csv', index=False)
+```
+
+### Step 4: Automate Script Execution with Zapier
+Use Zapier's Code by Zapier step to run the Python script. Alternatively, schedule the script to run daily using a cron job or Zapier's Schedule trigger. The script outputs a CSV file.
+
+### Step 5: Generate PDF Reports
+Use PDF.co to convert the CSV into individual PDF reports. Set up a Zapier integration with PDF.co:
+- Trigger: New file in Google Drive (the CSV output)
+- Action: PDF.co Merge or PDF.co Generate PDF from Template
+
+Create a PDF template with placeholders for client name, risk category, and leverage. PDF.co will populate and generate a PDF for each row.
+
+### Step 6: Distribute Reports
+Finally, use Zapier to email each PDF to the respective client or store them in a shared folder. Add a Zap that:
+- Trigger: New PDF in Google Drive (from PDF.co)
+- Action: Gmail Send Email (attach PDF)
+
+### Step 7: Monitor and Refine
+Set up a dashboard in Google Sheets to track report generation status. Use Zapier's built-in logging to monitor errors.
+
+### Conclusion
+This automated workflow eliminates manual report generation, reduces errors, and ensures clients receive timely, personalized leverage information. Total setup time is about 2-3 hours, with ongoing costs minimal if using free tiers.

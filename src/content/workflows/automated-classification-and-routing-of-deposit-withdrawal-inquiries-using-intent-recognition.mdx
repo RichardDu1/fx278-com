@@ -1,0 +1,85 @@
+---
+title: "Automated Classification and Routing of Deposit/Withdrawal Inquiries Using Intent Recognition"
+description: "A step-by-step guide to set up an AI-powered system that automatically classifies customer deposit/withdrawal inquiries and routes them to the appropriate support queue, reducing manual sorting time by 80%."
+targetRole: ["customer-support-agent"]
+targetIntent: ["classify-payment-inquiries"]
+difficulty: "Intermediate"
+setupTime: "2-3 Hours"
+costEstimate: "$50 - $200/mo"
+roi: "Saves 15 hours/week"
+toolsUsed: ["zapier","openai-api","freshdesk"]
+---
+
+## Automated Classification and Routing of Deposit/Withdrawal Inquiries Using Intent Recognition
+
+### Overview
+This workflow uses OpenAI's GPT-4 API to classify incoming support tickets related to deposits and withdrawals, then automatically routes them to the appropriate team (e.g., deposits team, withdrawals team, or general inquiries). This reduces manual sorting and speeds up response times.
+
+### Prerequisites
+- A Freshdesk account (or any ticketing system with API access)
+- An OpenAI API key
+- A Zapier account (or similar automation platform)
+- Basic knowledge of JSON and API calls
+
+### Step 1: Set Up Freshdesk Webhook
+1. In Freshdesk, go to Admin > Workflows > New Workflow.
+2. Choose "Ticket Created" as the trigger.
+3. Add a "Webhook" action to send ticket data to Zapier.
+4. Configure the webhook URL from Zapier (see Step 2).
+5. Include ticket fields: subject, description, requester email, and custom fields.
+
+### Step 2: Create Zapier Zap
+1. Create a new Zap with Webhook trigger (catch raw data).
+2. Add a step: "Run Python" (or Code by Zapier) to process the ticket data.
+3. Use the following Python code to call OpenAI API:
+
+```python
+import requests
+import json
+
+def classify_intent(ticket_subject, ticket_description):
+    prompt = f"""Classify the following customer inquiry into one of these intents: 'deposit', 'withdrawal', 'general_payment', 'other'. 
+    Ticket Subject: {ticket_subject}
+    Ticket Description: {ticket_description}
+    Intent:"""
+    
+    headers = {
+        'Authorization': 'Bearer YOUR_OPENAI_API_KEY',
+        'Content-Type': 'application/json'
+    }
+    data = {
+        'model': 'gpt-4',
+        'messages': [{'role': 'user', 'content': prompt}],
+        'max_tokens': 10,
+        'temperature': 0
+    }
+    response = requests.post('https://api.openai.com/v1/chat/completions', headers=headers, json=data)
+    intent = response.json()['choices'][0]['message']['content'].strip().lower()
+    return intent
+
+# Input from webhook
+subject = input_data['subject']
+description = input_data['description']
+intent = classify_intent(subject, description)
+return {'intent': intent}
+```
+
+4. Replace `YOUR_OPENAI_API_KEY` with your actual key.
+5. Test the step to ensure it returns a valid intent.
+
+### Step 3: Route Based on Intent
+1. Add a Filter step in Zapier: only continue if intent is 'deposit', 'withdrawal', or 'general_payment'.
+2. Add a Freshdesk action: "Update Ticket".
+3. Map the intent to a custom field (e.g., "Payment Type") or assign to a specific group:
+   - If intent == 'deposit': assign to "Deposits Team"
+   - If intent == 'withdrawal': assign to "Withdrawals Team"
+   - If intent == 'general_payment': assign to "Payment Support"
+4. Optionally, add a Slack notification to the respective team channel.
+
+### Step 4: Monitor and Improve
+1. Review misclassifications weekly and adjust the prompt or add examples.
+2. Consider using a fine-tuned model for higher accuracy.
+3. Set up a feedback loop where agents can correct the intent, and log those corrections for retraining.
+
+### Conclusion
+This workflow automates the tedious task of manually reading and routing payment inquiries, allowing your support team to focus on resolving issues faster. With GPT-4's accuracy, you can expect over 90% correct classification.

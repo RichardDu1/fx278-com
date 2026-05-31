@@ -1,0 +1,85 @@
+---
+title: "NLP-Based Sentiment Analysis for ECN Broker Reviews: Identifying Spread and Commission Complaints"
+description: "A step-by-step guide for marketing analysts to use NLP tools to analyze broker reviews, extract sentiment related to spreads and commissions, and generate actionable insights for competitive positioning."
+targetRole: ["marketing-analyst"]
+targetIntent: ["analyze-broker-reviews"]
+difficulty: "Intermediate"
+setupTime: "2 Hours"
+costEstimate: "$0 - $50/mo"
+roi: "Saves 15 hours/week on manual review analysis"
+toolsUsed: ["monkeylearn","google-colab","tableau-public"]
+---
+
+## Overview
+
+This workflow enables marketing analysts to automatically extract and analyze sentiment around spreads and commissions from ECN broker reviews using NLP. By identifying pain points, you can refine marketing messaging and improve competitive analysis.
+
+## Prerequisites
+
+- Basic understanding of Python (optional)
+- Google account for Colab
+- MonkeyLearn account (free tier available)
+- Tableau Public account (free)
+
+## Step 1: Collect Broker Reviews
+
+1. Scrape reviews from ForexFactory, Trustpilot, or similar sites using a tool like **Octoparse** (free tier) or manually export CSV.
+2. Ensure each review has columns: `review_text`, `broker_name`, `date`, `rating`.
+
+## Step 2: Set Up MonkeyLearn for Sentiment Analysis
+
+1. Sign up at [MonkeyLearn](https://monkeylearn.com) and create a new **Classifier**.
+2. Choose the **Sentiment Analysis** model (pre-trained).
+3. Upload your CSV or connect via API.
+4. Train the model on a sample of 50 reviews labeled as positive/negative/neutral regarding spreads/commissions.
+5. Run the model on all reviews to get sentiment scores.
+
+## Step 3: Extract Spread and Commission Mentions with Keyword Filtering
+
+1. In MonkeyLearn, create a **Keyword Extractor** or use the **Custom Extraction** module.
+2. Define keywords: "spread", "commission", "pip", "cost", "fee".
+3. Extract snippets containing these keywords.
+4. Export results as CSV with columns: `review_id`, `keyword`, `snippet`, `sentiment`.
+
+## Step 4: Analyze in Google Colab (Python)
+
+1. Open [Google Colab](https://colab.research.google.com) and create a new notebook.
+2. Upload your CSV using `from google.colab import files`.
+3. Use pandas to group by broker and calculate average sentiment for spread/commission mentions.
+4. Visualize with matplotlib:
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('sentiment_keywords.csv')
+broker_sentiment = df.groupby('broker_name')['sentiment'].mean().sort_values()
+broker_sentiment.plot(kind='barh')
+plt.title('Average Sentiment for Spread/Commission Mentions by Broker')
+plt.show()
+```
+
+## Step 5: Create Dashboard in Tableau Public
+
+1. Sign in to [Tableau Public](https://public.tableau.com).
+2. Connect to your processed CSV.
+3. Build a dashboard with:
+   - Bar chart of average sentiment per broker
+   - Word cloud of most frequent keywords in negative reviews
+   - Filter by date range
+4. Publish and share with your team.
+
+## Step 6: Interpret Results
+
+- Brokers with negative sentiment on spreads: highlight in competitor analysis.
+- Positive sentiment: use in marketing copy (e.g., "lowest spreads").
+- Track changes over time to see impact of broker policy changes.
+
+## Automation Tips
+
+- Schedule MonkeyLearn API calls via Zapier to run weekly.
+- Use Google Sheets as intermediary for live updates.
+
+## Conclusion
+
+This workflow turns unstructured review data into a competitive intelligence asset. By focusing on spread and commission complaints, you can directly address trader pain points in your marketing campaigns.

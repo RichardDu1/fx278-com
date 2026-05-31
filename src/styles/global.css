@@ -1,47 +1,36 @@
 @import "tailwindcss";
 
-/* === TRUE BESPOKE REDESIGN: FX278 SIGNAL ENGINE ===
-   Aesthetic: Bloomberg Terminal / High-Frequency Trading
-   Vibe: Pure Black, Neon Green (Profit), Crimson (Loss) === */
-
 @theme {
-  --color-primary: #00FF41; /* Hacker/Terminal Green */
-  --color-primary-dark: #008F11;
-  --color-accent: #FF003C;  /* Flash Crash Red */
+  --color-primary-500: #8b5cf6;
+  --color-primary-600: #7c3aed;
+  --color-dark: #050505;
+  --color-card: #111111;
   
-  --color-surface: #0a0a0a; /* True Black */
-  --color-neutral: #111111; /* Off-Black */
-  --color-border: #333333;  /* Dark Gray */
-  --color-muted: #888888;   /* Light Gray */
-  --color-text: #E0E0E0;    /* Soft White for reading */
+  --animate-blob: blob 10s infinite;
+  --animate-fade-in-up: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 
-  /* Monospace for data, sleek sans for UI */
-  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); opacity: 0.2; }
+    33% { transform: translate(40px, -60px) scale(1.1); opacity: 0.3; }
+    66% { transform: translate(-30px, 30px) scale(0.9); opacity: 0.1; }
+    100% { transform: translate(0px, 0px) scale(1); opacity: 0.2; }
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body { 
-  font-family: var(--font-sans); 
-  color: var(--color-text); 
-  background-color: var(--color-surface); 
-  line-height: 1.5;
+@utility animation-delay-2000 {
+  animation-delay: 2s;
 }
 
-h1, h2, h3, h4 { 
-  font-weight: 600;
-  color: var(--color-primary-dark);
+@utility animation-delay-4000 {
+  animation-delay: 4s;
 }
 
-.data-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1px;
-  background-color: var(--color-border);
-  border: 1px solid var(--color-border);
-}
-.data-cell {
-  background-color: var(--color-neutral);
-  padding: 0.75rem;
+body {
+  background-color: var(--color-dark);
+  color: #e2e8f0;
 }
